@@ -1,0 +1,28 @@
+{
+  "states": [
+    "intent_affirmative",
+    "intent_bye",
+    "intent_greet",
+    "intent_schedule_appointment",
+    "entity_dept",
+    "entity_time",
+    "entity_name",
+    "slot_dept_0",
+    "prev_action_listen",
+    "prev_action_restart",
+    "prev_action_default_fallback",
+    "prev_action_deactivate_form",
+    "prev_utter_greet",
+    "prev_utter_bye",
+    "prev_utter_schedule_appointment",
+    "prev_utter_affirmative",
+    "prev_utter_incorrect_dept",
+    "prev_utter_no_dept",
+    "prev_action_bye",
+    "prev_action_slot_reset",
+    "prev_action_split_date_time",
+    "prev_validate_inputs",
+    "prev_appointment_form",
+    "active_form_appointment_form"
+  ]
+}

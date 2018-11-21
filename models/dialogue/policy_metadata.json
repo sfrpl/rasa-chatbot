@@ -1,0 +1,48 @@
+{
+  "rasa_core": "0.12.1",
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
+  "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "rasa_core.policies.keras_policy.KerasPolicy",
+    "rasa_core.policies.form_policy.FormPolicy"
+  ],
+  "trained_at": "20181119-125821",
+  "max_histories": [
+    2,
+    5,
+    2
+  ],
+  "python": "3.5.2",
+  "action_fingerprints": {
+    "action_listen": {
+      "slots": [
+        "time",
+        "dept"
+      ]
+    },
+    "appointment_form": {
+      "slots": [
+        "requested_slot",
+        "time",
+        "dept"
+      ]
+    },
+    "validate_inputs": {
+      "slots": [
+        "doc_slot",
+        "time",
+        "time_slot",
+        "date_slot"
+      ]
+    },
+    "action_bye": {
+      "slots": []
+    },
+    "action_slot_reset": {
+      "slots": [
+        "time",
+        "dept"
+      ]
+    }
+  }
+}

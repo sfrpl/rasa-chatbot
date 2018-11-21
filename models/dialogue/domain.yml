@@ -1,0 +1,89 @@
+%YAML 1.1
+---
+actions:
+- utter_greet
+- utter_bye
+- utter_schedule_appointment
+- utter_affirmative
+- utter_incorrect_dept
+- utter_no_dept
+- action_bye
+- action_slot_reset
+- action_split_date_time
+- validate_inputs
+config:
+  store_entities_as_slots: true
+entities:
+- dept
+- time
+- name
+forms:
+- appointment_form
+intents:
+- affirmative:
+    use_entities: true
+- schedule_appointment:
+    use_entities: true
+- greet:
+    use_entities: true
+- bye:
+    use_entities: true
+slots:
+  date_slot:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+  dept:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  doc_slot:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+  name:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+  requested_slot:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+  time:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+  time_slot:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+templates:
+  utter_affirmative:
+  - text: Thank you! I am confirming your appointment with {doc_slot} in the {dept}
+      department on {date_slot} in the {time_slot}
+  utter_ask_date:
+  - text: On which date would you like to schedule the appointment?
+  utter_ask_dept:
+  - text: With which speciality?
+  utter_ask_name:
+  - text: In whose name would you like to schedule the appointment?
+  utter_ask_time:
+  - text: At what time would you like to schedule the appointment?
+  utter_bye:
+  - text: Bye! Take care
+  utter_finish:
+  - text: thank you for entering the details
+  utter_greet:
+  - text: Hello there ! How can I help?
+  utter_incorrect_date:
+  - text: Sorry the date you have entered is incorrect. Please enter the date and
+      time again
+  utter_incorrect_dept:
+  - text: Sorry this speciality does not exist. You will have to enter the speciality
+      again.
+  utter_incorrect_time:
+  - text: Sorry! No doctor is available at date and time that you have entered. Please
+      enter the date and time again
+  utter_schedule_appointment:
+  - text: Shall I confirm your appointment with {doc_slot} in the {dept} department
+      on {date_slot} in the {time_slot}?
