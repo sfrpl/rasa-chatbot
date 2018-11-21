@@ -19,29 +19,33 @@ PWD = $HOME
 7. python -m spacy download en_core_web_md
 8. python -m spacy link en_core_web_md en
 9. pip install pandas
-10. git clone https://github.com/sfrpl/chatbot
-11. cd chatbot/chatroom
-12. yarn install
-13. yarn build
+10. pip install duckling
+11. git clone https://github.com/sfrpl/chatbot
+12. cd chatbot/chatroom
+13. yarn install
+14. yarn build
 
 ## Running the code
 (in the existing terminal) - T1
 
-14. yarn serve
+15. yarn serve
+### Before running 15 ensure the current working directory is $/chatbot/chatroom
 
 ## Open another terminal - T2
 PWD = $HOME
 
-15. source ./venv_chatbot/bin/activate
-16. cd chatbot
-17. python -m rasa_core_sd.endpoint --actions action
+16. source ./venv_chatbot/bin/activate
+17. cd chatbot
+18. python -m rasa_core_sd.endpoint --actions action
+### Before running 18 ensure the current working directory is $/chatbot
 
 ## Open another terminal - T3
 PWD = $HOME
 
-18. source ./venv_chatbot/bin/activate
-19. cd chatbot
-20. python run_bot.py
+19. source ./venv_chatbot/bin/activate
+20. cd chatbot
+21. python run_bot.py
+### Before running 18 ensure the current working directory is $/chatbot
 
 ## Open browser
 
