@@ -26,6 +26,7 @@ PWD = $HOME
 
 ## Running the code
 (in the existing terminal) - T1
+
 14. yarn serve
 
 ## Open another terminal - T2
