@@ -1,5 +1,15 @@
- 
-# Instructions for using this repo
+# Functionality of the code
+* Chatbot to talk with user and setup an appointment with some speciality in a hospital
+* The availability of the doctor is controlled by # DocAvail.csv
+* This mimics the presence of a database where information is present and the input of the user can be cross checked with the data present
+* Once the user enters the data, if no doctor is available the chatbot will reply back and ask the user to enter the details again
+* If the doctor is available , appointment is scheduled
+
+
+
+
+
+# Instructions for Installation
 
 ## Requirements : ubuntu system with python 3.5 installed
 
