@@ -46,7 +46,7 @@ PWD = $HOME
 
 16. source ./venv_chatbot/bin/activate
 17. cd chatbot
-18. python -m rasa_core_sd.endpoint --actions action
+18. python -m rasa_core_sdk.endpoint --actions actions
 ### Before running 18 ensure the current working directory is $/chatbot
 
 ## Open another terminal - T3
@@ -56,6 +56,13 @@ PWD = $HOME
 20. cd chatbot
 21. python run_bot.py
 ### Before running 18 ensure the current working directory is $/chatbot
+
+## Open another terminal - T4
+22. source ./venv_chatbot/bin/activate
+23. cd chatbot
+24. Install docker
+25. docker run -p 8000:8000 rasa/duckling
+
 
 ## Open browser
 
