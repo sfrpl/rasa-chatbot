@@ -41,14 +41,24 @@ PWD = $HOME
 ### Before running 15 ensure the current working directory is $/chatbot/chatroom
 
 ## Open another terminal - T2
-PWD = $HOME
 
+PWD = $HOME
 16. source ./venv_chatbot/bin/activate
 17. cd chatbot
-18. make run
+18. make run-actions
 ### Before running 18 ensure the current working directory is $/chatbot
 
 ## Open another terminal - T3
+
+PWD = $HOME
+16. source ./venv_chatbot/bin/activate
+17. cd chatbot
+18. make run-core
+### Before running 18 ensure the current working directory is $/chatbot
+
+
+
+## Open another terminal - T4
 19. source ./venv_chatbot/bin/activate
 20. cd chatbot
 21. Install docker
