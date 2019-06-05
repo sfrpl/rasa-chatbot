@@ -1,8 +1,0 @@
-{
-  "presets": [["env", {
-      "targets": {
-        "browsers": ["last 2 versions", "safari >= 7", "ie >= 11"]
-      }
-    }], "react"],
-  "plugins": ["transform-flow-strip-types", "syntax-class-properties", "transform-class-properties"]
-}

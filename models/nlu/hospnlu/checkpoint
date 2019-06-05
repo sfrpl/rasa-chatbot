@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/chatbot/models/nlu/hospnlu/component_4_EmbeddingIntentClassifier.ckpt"
+all_model_checkpoint_paths: "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/chatbot/models/nlu/hospnlu/component_4_EmbeddingIntentClassifier.ckpt"

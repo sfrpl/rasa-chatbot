@@ -1,0 +1,49 @@
+{
+  "action_fingerprints": {
+    "action_listen": {
+      "slots": [
+        "time",
+        "dept"
+      ]
+    },
+    "appointment_form": {
+      "slots": [
+        "time",
+        "requested_slot",
+        "dept"
+      ]
+    },
+    "validate_inputs": {
+      "slots": [
+        "date_slot",
+        "time_slot",
+        "doc_slot"
+      ]
+    },
+    "action_bye": {
+      "slots": []
+    },
+    "action_slot_reset": {
+      "slots": [
+        "time",
+        "dept"
+      ]
+    }
+  },
+  "python": "3.6.7",
+  "max_histories": [
+    5,
+    5,
+    2
+  ],
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
+  "policy_names": [
+    "rasa_core.policies.keras_policy.KerasPolicy",
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "rasa_core.policies.form_policy.FormPolicy"
+  ],
+  "trained_at": "20190529-140130",
+  "rasa_core": "0.14.0a8",
+  "tensorflow": "1.12.0",
+  "sklearn": "0.20.2"
+}

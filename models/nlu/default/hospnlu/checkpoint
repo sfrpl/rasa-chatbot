@@ -1,2 +1,2 @@
-model_checkpoint_path: "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/HospBot/./models/nlu/default/hospnlu/intent_classifier_tensorflow_embedding.ckpt"
-all_model_checkpoint_paths: "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/HospBot/./models/nlu/default/hospnlu/intent_classifier_tensorflow_embedding.ckpt"
+model_checkpoint_path: "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/chatbot/./models/nlu/default/hospnlu/component_4_EmbeddingIntentClassifier.ckpt"
+all_model_checkpoint_paths: "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/chatbot/./models/nlu/default/hospnlu/component_4_EmbeddingIntentClassifier.ckpt"

@@ -2,12 +2,13 @@
 import datetime
 import pandas as pd
 from typing import Dict, Text, Any, List, Union
-from rasa_core_sdk.events import SlotSet,AllSlotsReset
-from rasa_core_sdk import Action
-from rasa_core_sdk import ActionExecutionRejection
-from rasa_core_sdk import Tracker
-from rasa_core_sdk.executor import CollectingDispatcher
-from rasa_core_sdk.forms import FormAction, REQUESTED_SLOT
+from rasa_sdk.events import SlotSet,AllSlotsReset
+from rasa_sdk import Action
+from rasa_sdk import ActionExecutionRejection
+from rasa_sdk import Tracker
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.forms import FormAction, REQUESTED_SLOT
+from rasa_sdk.events import SlotSet, UserUtteranceReverted,ConversationPaused, FollowupAction, Form
 
 
 class ActionAppointment(FormAction):
@@ -132,6 +133,7 @@ class ValidateInputs(Action):
         dept = tracker.get_slot('dept')
         date_slot=tracker.get_slot('date_slot')
         doc_slot=tracker.get_slot('doc_slot')
+        print(time,dept)
         department = ['cardiology','neurology','pediatrics','family medicine','intensive care',
                         'emergency','psychiatry','opthalmology','ent','gastroenterology','gynaecology',
                         'microbiology','nephrology','oncology','orthopaedics']
@@ -149,8 +151,10 @@ class ValidateInputs(Action):
         if time == None:
             pass
         else:
+
             date = time[0:10]
-            time_slot = time[11:19]         
+            time_slot = time[11:19]
+            print(date,time_slot)         
             if date_slot != None:
                 pass
             else:
@@ -197,7 +201,7 @@ class ValidateInputs(Action):
                 return_slots.append(SlotSet("doc_slot",doc))
             else: 
                 pass
-        
+        print(return_slots)
             #return_slots.append(SlotSet("time", None))
 
         return return_slots

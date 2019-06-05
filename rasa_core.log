@@ -1,0 +1,693 @@
+Available web server routes: 
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+Starting Rasa Core server on http://localhost:5005
+Goin' Fast @ http://0.0.0.0:5005
+Enabling coroutine debugging. Loop id 87188056
+Restoring parameters from models/nlu/default/hospnlu/component_4_EmbeddingIntentClassifier.ckpt
+Starting worker [26313]
+
+Executing <Task finished coro=<SanicPluginsFramework._handle_request() done, defined at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:471> result=None created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.002 seconds
+created a new lock for conversation '0f095ade-6d57-45fb-b195-7c8fd74f5dd9'
+Creating a new tracker for id '0f095ade-6d57-45fb-b195-7c8fd74f5dd9'.
+Received user message 'hi' with intent '{'name': 'greet', 'confidence': 0.7831109166145325}' and entities '[]'
+Logged UserUtterance - tracker now has 2 events
+Current slot values: 
+	date_slot: None
+	dept: None
+	doc_slot: None
+	name: None
+	requested_slot: None
+	time: None
+	time_slot: None
+Current tracker state [None, None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}]
+There is a memorised next action '7'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'utter_greet' with prob 1.00.
+Action 'utter_greet' ended with events '[]'
+Bot utterance 'BotUttered(text: Hello there ! How can I help?, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}]
+There is a memorised next action '0'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+deleted lock for conversation '0f095ade-6d57-45fb-b195-7c8fd74f5dd9' (unused)
+
+Executing <Task finished coro=<SanicPluginsFramework._handle_request() done, defined at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:471> result=None created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.039 seconds
+
+created a new lock for conversation '0f095ade-6d57-45fb-b195-7c8fd74f5dd9'
+Recreating tracker for id '0f095ade-6d57-45fb-b195-7c8fd74f5dd9'
+Received user message 'i want to schedule an appointment' with intent '{'name': 'schedule_appointment', 'confidence': 0.9718726873397827}' and entities '[]'
+Logged UserUtterance - tracker now has 6 events
+Current slot values: 
+	date_slot: None
+	dept: None
+	doc_slot: None
+	name: None
+	requested_slot: None
+	time: None
+	time_slot: None
+Current tracker state [None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_schedule_appointment': 1.0}]
+There is a memorised next action '16'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'validate_inputs' with prob 1.00.
+Calling action endpoint to run action 'validate_inputs'.
+Executing <Task pending coro=<SanicPluginsFramework._handle_request() running at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:476> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7fce75abca08>()] created at /usr/lib/python3.6/asyncio/tasks.py:686> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.015 seconds
+Encountered an exception while running action 'validate_inputs'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Failed to execute custom action.
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 335, in run
+    json=json_body, method="post", timeout=DEFAULT_REQUEST_TIMEOUT)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/utils.py", line 689, in request
+    await resp.content.read())
+rasa_core.utils.ClientResponseError: 404, NOT FOUND, body='b'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = await action.run(dispatcher, tracker, self.domain)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 355, in run
+    raise Exception("Failed to execute custom action.") from e
+Exception: Failed to execute custom action.
+Action 'validate_inputs' ended with events '[]'
+Current tracker state [{}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_schedule_appointment': 1.0}, {'prev_validate_inputs': 1.0, 'intent_schedule_appointment': 1.0}]
+There is a memorised next action '17'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'appointment_form' with prob 1.00.
+Calling action endpoint to run action 'appointment_form'.
+Executing <Handle <TaskWakeupMethWrapper object at 0x7fce38467978> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/aiohttp/helpers.py:656> took 0.003 seconds
+Encountered an exception while running action 'appointment_form'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Failed to execute custom action.
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 335, in run
+    json=json_body, method="post", timeout=DEFAULT_REQUEST_TIMEOUT)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/utils.py", line 689, in request
+    await resp.content.read())
+rasa_core.utils.ClientResponseError: 404, NOT FOUND, body='b'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = await action.run(dispatcher, tracker, self.domain)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 355, in run
+    raise Exception("Failed to execute custom action.") from e
+Exception: Failed to execute custom action.
+Action 'appointment_form' ended with events '[]'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_schedule_appointment': 1.0}, {'prev_validate_inputs': 1.0, 'intent_schedule_appointment': 1.0}, {'prev_appointment_form': 1.0, 'intent_schedule_appointment': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_FallbackPolicy
+Predicted next action 'action_default_fallback' with prob 1.00.
+Action 'action_default_fallback' ended with events '['UserUtteranceReverted()']'
+Current tracker state [None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}]
+There is a memorised next action '0'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+deleted lock for conversation '0f095ade-6d57-45fb-b195-7c8fd74f5dd9' (unused)
+
+Executing <Handle <TaskWakeupMethWrapper object at 0x7fce75abc9d8> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/aiohttp/helpers.py:656> took 0.004 seconds
+Stopping worker [26313]
+Server Stopped
+Starting Rasa Core server on http://localhost:5005
+Goin' Fast @ http://0.0.0.0:5005
+Restoring parameters from models/nlu/default/hospnlu/component_4_EmbeddingIntentClassifier.ckpt
+Starting worker [28498]
+Stopping worker [28498]
+Server Stopped
+Available web server routes: 
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+Starting Rasa Core server on http://localhost:5005
+Goin' Fast @ http://0.0.0.0:5005
+Enabling coroutine debugging. Loop id 89417976
+Restoring parameters from models/nlu/default/hospnlu/component_4_EmbeddingIntentClassifier.ckpt
+Starting worker [28887]
+
+Executing <Task finished coro=<SanicPluginsFramework._handle_request() done, defined at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:471> result=None created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.001 seconds
+created a new lock for conversation 'fe75f6aa-ce24-40bc-8f65-8a02457a0bfa'
+Creating a new tracker for id 'fe75f6aa-ce24-40bc-8f65-8a02457a0bfa'.
+Received user message 'hi' with intent '{'name': 'greet', 'confidence': 0.7831109166145325}' and entities '[]'
+Logged UserUtterance - tracker now has 2 events
+Current slot values: 
+	date_slot: None
+	dept: None
+	doc_slot: None
+	name: None
+	requested_slot: None
+	time: None
+	time_slot: None
+Current tracker state [None, None, None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_FallbackPolicy
+Predicted next action 'action_default_fallback' with prob 1.00.
+Action 'action_default_fallback' ended with events '['UserUtteranceReverted()']'
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+deleted lock for conversation 'fe75f6aa-ce24-40bc-8f65-8a02457a0bfa' (unused)
+
+Executing <Task finished coro=<SanicPluginsFramework._handle_request() done, defined at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:471> result=None created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.041 seconds
+
+created a new lock for conversation 'fe75f6aa-ce24-40bc-8f65-8a02457a0bfa'
+Recreating tracker for id 'fe75f6aa-ce24-40bc-8f65-8a02457a0bfa'
+Received user message 'hi' with intent '{'name': 'greet', 'confidence': 0.7831109166145325}' and entities '[]'
+Logged UserUtterance - tracker now has 6 events
+Current slot values: 
+	date_slot: None
+	dept: None
+	doc_slot: None
+	name: None
+	requested_slot: None
+	time: None
+	time_slot: None
+Current tracker state [None, None, None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_FallbackPolicy
+Predicted next action 'action_default_fallback' with prob 1.00.
+Action 'action_default_fallback' ended with events '['UserUtteranceReverted()']'
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+deleted lock for conversation 'fe75f6aa-ce24-40bc-8f65-8a02457a0bfa' (unused)
+
+Executing <Task finished coro=<SanicPluginsFramework._handle_request() done, defined at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:471> result=None created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.008 seconds
+
+created a new lock for conversation 'fe75f6aa-ce24-40bc-8f65-8a02457a0bfa'
+Recreating tracker for id 'fe75f6aa-ce24-40bc-8f65-8a02457a0bfa'
+Received user message 'hi' with intent '{'name': 'greet', 'confidence': 0.7831109166145325}' and entities '[]'
+Logged UserUtterance - tracker now has 10 events
+Current slot values: 
+	date_slot: None
+	dept: None
+	doc_slot: None
+	name: None
+	requested_slot: None
+	time: None
+	time_slot: None
+Current tracker state [None, None, None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_FallbackPolicy
+Predicted next action 'action_default_fallback' with prob 1.00.
+Action 'action_default_fallback' ended with events '['UserUtteranceReverted()']'
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+deleted lock for conversation 'fe75f6aa-ce24-40bc-8f65-8a02457a0bfa' (unused)
+
+Executing <Task finished coro=<SanicPluginsFramework._handle_request() done, defined at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:471> result=None created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.008 seconds
+Stopping worker [28887]
+Server Stopped
+Available web server routes: 
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+Starting Rasa Core server on http://localhost:5005
+Goin' Fast @ http://0.0.0.0:5005
+Enabling coroutine debugging. Loop id 87679432
+Restoring parameters from models/nlu/default/hospnlu/component_4_EmbeddingIntentClassifier.ckpt
+Starting worker [28998]
+
+Executing <Task finished coro=<SanicPluginsFramework._handle_request() done, defined at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:471> result=None created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.001 seconds
+created a new lock for conversation 'e74ae4b0-ff41-4550-903f-e4a244bf081c'
+Creating a new tracker for id 'e74ae4b0-ff41-4550-903f-e4a244bf081c'.
+Received user message 'hi' with intent '{'name': 'greet', 'confidence': 0.7831109166145325}' and entities '[]'
+Logged UserUtterance - tracker now has 2 events
+Current slot values: 
+	date_slot: None
+	dept: None
+	doc_slot: None
+	name: None
+	requested_slot: None
+	time: None
+	time_slot: None
+Current tracker state [None, None, None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}]
+There is a memorised next action '7'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'utter_greet' with prob 1.00.
+Action 'utter_greet' ended with events '[]'
+Bot utterance 'BotUttered(text: Hello there ! How can I help?, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [None, None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}]
+There is a memorised next action '0'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+deleted lock for conversation 'e74ae4b0-ff41-4550-903f-e4a244bf081c' (unused)
+
+Executing <Task finished coro=<SanicPluginsFramework._handle_request() done, defined at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:471> result=None created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.040 seconds
+
+created a new lock for conversation 'e74ae4b0-ff41-4550-903f-e4a244bf081c'
+Recreating tracker for id 'e74ae4b0-ff41-4550-903f-e4a244bf081c'
+Received user message 'i want to schedule an appointment' with intent '{'name': 'schedule_appointment', 'confidence': 0.9718726873397827}' and entities '[]'
+Logged UserUtterance - tracker now has 6 events
+Current slot values: 
+	date_slot: None
+	dept: None
+	doc_slot: None
+	name: None
+	requested_slot: None
+	time: None
+	time_slot: None
+Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_action_listen': 1.0}]
+There is a memorised next action '16'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'validate_inputs' with prob 1.00.
+Calling action endpoint to run action 'validate_inputs'.
+Executing <Task pending coro=<SanicPluginsFramework._handle_request() running at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:476> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7f3417c22a08>()] created at /usr/lib/python3.6/asyncio/tasks.py:686> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.014 seconds
+Encountered an exception while running action 'validate_inputs'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Failed to execute custom action.
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 335, in run
+    json=json_body, method="post", timeout=DEFAULT_REQUEST_TIMEOUT)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/utils.py", line 689, in request
+    await resp.content.read())
+rasa_core.utils.ClientResponseError: 404, NOT FOUND, body='b'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = await action.run(dispatcher, tracker, self.domain)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 355, in run
+    raise Exception("Failed to execute custom action.") from e
+Exception: Failed to execute custom action.
+Action 'validate_inputs' ended with events '[]'
+Current tracker state [{}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_action_listen': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_validate_inputs': 1.0}]
+There is a memorised next action '21'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'appointment_form' with prob 1.00.
+Calling action endpoint to run action 'appointment_form'.
+Executing <Handle <TaskWakeupMethWrapper object at 0x7f33d85fd4c8> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/aiohttp/helpers.py:656> took 0.004 seconds
+Encountered an exception while running action 'appointment_form'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Failed to execute custom action.
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 335, in run
+    json=json_body, method="post", timeout=DEFAULT_REQUEST_TIMEOUT)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/utils.py", line 689, in request
+    await resp.content.read())
+rasa_core.utils.ClientResponseError: 404, NOT FOUND, body='b'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = await action.run(dispatcher, tracker, self.domain)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 355, in run
+    raise Exception("Failed to execute custom action.") from e
+Exception: Failed to execute custom action.
+Action 'appointment_form' ended with events '[]'
+Current tracker state [{'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_action_listen': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_validate_inputs': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_appointment_form': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_FallbackPolicy
+Predicted next action 'action_default_fallback' with prob 1.00.
+Action 'action_default_fallback' ended with events '['UserUtteranceReverted()']'
+Current tracker state [None, None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}]
+There is a memorised next action '0'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+deleted lock for conversation 'e74ae4b0-ff41-4550-903f-e4a244bf081c' (unused)
+
+Executing <Handle <TaskWakeupMethWrapper object at 0x7f33d85fd618> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/aiohttp/helpers.py:656> took 0.004 seconds
+Stopping worker [28998]
+Server Stopped
+Available web server routes: 
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+Starting Rasa Core server on http://localhost:5005
+Goin' Fast @ http://0.0.0.0:5005
+Enabling coroutine debugging. Loop id 85072232
+Restoring parameters from models/nlu/default/hospnlu/component_4_EmbeddingIntentClassifier.ckpt
+Starting worker [30099]
+
+Executing <Task finished coro=<SanicPluginsFramework._handle_request() done, defined at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:471> result=None created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.001 seconds
+created a new lock for conversation '3c255768-8d01-405a-9a4e-fc0207a0b4ae'
+Creating a new tracker for id '3c255768-8d01-405a-9a4e-fc0207a0b4ae'.
+Received user message 'hi' with intent '{'name': 'greet', 'confidence': 0.7831109166145325}' and entities '[]'
+Logged UserUtterance - tracker now has 2 events
+Current slot values: 
+	date_slot: None
+	dept: None
+	doc_slot: None
+	name: None
+	requested_slot: None
+	time: None
+	time_slot: None
+Current tracker state [None, None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}]
+There is a memorised next action '7'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'utter_greet' with prob 1.00.
+Action 'utter_greet' ended with events '[]'
+Bot utterance 'BotUttered(text: Hello there ! How can I help?, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}]
+There is a memorised next action '0'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+deleted lock for conversation '3c255768-8d01-405a-9a4e-fc0207a0b4ae' (unused)
+
+Executing <Task finished coro=<SanicPluginsFramework._handle_request() done, defined at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:471> result=None created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.131 seconds
+
+created a new lock for conversation '3c255768-8d01-405a-9a4e-fc0207a0b4ae'
+Recreating tracker for id '3c255768-8d01-405a-9a4e-fc0207a0b4ae'
+Received user message 'i want to schedule an appointment' with intent '{'name': 'schedule_appointment', 'confidence': 0.9718726873397827}' and entities '[]'
+Logged UserUtterance - tracker now has 6 events
+Current slot values: 
+	date_slot: None
+	dept: None
+	doc_slot: None
+	name: None
+	requested_slot: None
+	time: None
+	time_slot: None
+Current tracker state [None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_schedule_appointment': 1.0}]
+There is a memorised next action '16'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'validate_inputs' with prob 1.00.
+Calling action endpoint to run action 'validate_inputs'.
+Executing <Task pending coro=<SanicPluginsFramework._handle_request() running at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:476> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7f0489a06b88>()] created at /usr/lib/python3.6/asyncio/tasks.py:686> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.015 seconds
+Executing <Handle <TaskWakeupMethWrapper object at 0x7f0489a06b58> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:721> took 0.001 seconds
+Encountered an exception while running action 'validate_inputs'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Failed to execute custom action.
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 335, in run
+    json=json_body, method="post", timeout=DEFAULT_REQUEST_TIMEOUT)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/utils.py", line 689, in request
+    await resp.content.read())
+rasa_core.utils.ClientResponseError: 404, NOT FOUND, body='b'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = await action.run(dispatcher, tracker, self.domain)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 355, in run
+    raise Exception("Failed to execute custom action.") from e
+Exception: Failed to execute custom action.
+Action 'validate_inputs' ended with events '[]'
+Current tracker state [{}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_schedule_appointment': 1.0}, {'prev_validate_inputs': 1.0, 'intent_schedule_appointment': 1.0}]
+There is a memorised next action '21'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'appointment_form' with prob 1.00.
+Calling action endpoint to run action 'appointment_form'.
+Executing <Handle <TaskWakeupMethWrapper object at 0x7f0489a06e88> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/aiohttp/helpers.py:656> took 0.005 seconds
+Encountered an exception while running action 'appointment_form'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Failed to execute custom action.
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 335, in run
+    json=json_body, method="post", timeout=DEFAULT_REQUEST_TIMEOUT)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/utils.py", line 689, in request
+    await resp.content.read())
+rasa_core.utils.ClientResponseError: 404, NOT FOUND, body='b'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = await action.run(dispatcher, tracker, self.domain)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 355, in run
+    raise Exception("Failed to execute custom action.") from e
+Exception: Failed to execute custom action.
+Action 'appointment_form' ended with events '[]'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_schedule_appointment': 1.0}, {'prev_validate_inputs': 1.0, 'intent_schedule_appointment': 1.0}, {'prev_appointment_form': 1.0, 'intent_schedule_appointment': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'validate_inputs' with prob 0.51.
+Calling action endpoint to run action 'validate_inputs'.
+Executing <Handle <TaskWakeupMethWrapper object at 0x7f0489a06f18> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/aiohttp/helpers.py:656> took 0.004 seconds
+Encountered an exception while running action 'validate_inputs'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Failed to execute custom action.
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 335, in run
+    json=json_body, method="post", timeout=DEFAULT_REQUEST_TIMEOUT)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/utils.py", line 689, in request
+    await resp.content.read())
+rasa_core.utils.ClientResponseError: 404, NOT FOUND, body='b'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = await action.run(dispatcher, tracker, self.domain)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 355, in run
+    raise Exception("Failed to execute custom action.") from e
+Exception: Failed to execute custom action.
+Action 'validate_inputs' ended with events '[]'
+Current tracker state [{'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_schedule_appointment': 1.0}, {'prev_validate_inputs': 1.0, 'intent_schedule_appointment': 1.0}, {'prev_appointment_form': 1.0, 'intent_schedule_appointment': 1.0}, {'prev_validate_inputs': 1.0, 'intent_schedule_appointment': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'utter_schedule_appointment' with prob 0.64.
+Action 'utter_schedule_appointment' ended with events '[]'
+Bot utterance 'BotUttered(text: Shall I confirm your appointment with None in the None department on None in the None?, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_schedule_appointment': 1.0}, {'prev_validate_inputs': 1.0, 'intent_schedule_appointment': 1.0}, {'prev_appointment_form': 1.0, 'intent_schedule_appointment': 1.0}, {'prev_validate_inputs': 1.0, 'intent_schedule_appointment': 1.0}, {'prev_utter_schedule_appointment': 1.0, 'intent_schedule_appointment': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 0.35.
+Action 'action_listen' ended with events '[]'
+deleted lock for conversation '3c255768-8d01-405a-9a4e-fc0207a0b4ae' (unused)
+
+Executing <Handle <TaskWakeupMethWrapper object at 0x7f0489a06b28> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/aiohttp/helpers.py:656> took 0.007 seconds
+Stopping worker [30099]
+Server Stopped
+Starting Rasa Core server on http://localhost:5005
+Goin' Fast @ http://0.0.0.0:5005
+Restoring parameters from models/nlu/default/hospnlu/component_4_EmbeddingIntentClassifier.ckpt
+Starting worker [22019]
+Encountered an exception while running action 'validate_inputs'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Encountered an exception while running action 'appointment_form'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Encountered an exception while running action 'validate_inputs'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Exception occurred while handling uri: unknown
+NoneType: None
+Exception occurred while handling uri: unknown
+NoneType: None
+Stopping worker [22019]
+Server Stopped
+Available web server routes: 
+/webhooks/rest                                     GET                            custom_webhook_RestInput.health
+/webhooks/rest/webhook                             POST                           custom_webhook_RestInput.receive
+Starting Rasa Core server on http://localhost:5005
+Goin' Fast @ http://0.0.0.0:5005
+Enabling coroutine debugging. Loop id 83233592
+Restoring parameters from models/nlu/default/hospnlu/component_4_EmbeddingIntentClassifier.ckpt
+Starting worker [22838]
+
+Executing <Task finished coro=<SanicPluginsFramework._handle_request() done, defined at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:471> result=None created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.001 seconds
+created a new lock for conversation 'df8cd21f-4c92-4285-930f-39214eae6973'
+Creating a new tracker for id 'df8cd21f-4c92-4285-930f-39214eae6973'.
+Received user message 'hi' with intent '{'name': 'greet', 'confidence': 0.6603743433952332}' and entities '[]'
+Logged UserUtterance - tracker now has 2 events
+Current slot values: 
+	date_slot: None
+	dept: None
+	doc_slot: None
+	name: None
+	requested_slot: None
+	time: None
+	time_slot: None
+Current tracker state [None, None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}]
+There is a memorised next action '7'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'utter_greet' with prob 1.00.
+Action 'utter_greet' ended with events '[]'
+Bot utterance 'BotUttered(text: Hello there ! How can I help?, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}]
+There is a memorised next action '0'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+deleted lock for conversation 'df8cd21f-4c92-4285-930f-39214eae6973' (unused)
+
+Executing <Task finished coro=<SanicPluginsFramework._handle_request() done, defined at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:471> result=None created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.133 seconds
+
+Executing <Task finished coro=<SanicPluginsFramework._handle_request() done, defined at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:471> result=None created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.001 seconds
+created a new lock for conversation 'df8cd21f-4c92-4285-930f-39214eae6973'
+Recreating tracker for id 'df8cd21f-4c92-4285-930f-39214eae6973'
+Received user message 'i want to schedule an appointmrnt' with intent '{'name': 'schedule_appointment', 'confidence': 0.9368702173233032}' and entities '[]'
+Logged UserUtterance - tracker now has 6 events
+Current slot values: 
+	date_slot: None
+	dept: None
+	doc_slot: None
+	name: None
+	requested_slot: None
+	time: None
+	time_slot: None
+Current tracker state [None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_action_listen': 1.0}]
+There is a memorised next action '15'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'validate_inputs' with prob 1.00.
+Calling action endpoint to run action 'validate_inputs'.
+Executing <Task pending coro=<SanicPluginsFramework._handle_request() running at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/spf/framework.py:476> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7fd020242b88>()] created at /usr/lib/python3.6/asyncio/tasks.py:686> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:333> took 0.015 seconds
+Executing <Handle <TaskWakeupMethWrapper object at 0x7fd020242b58> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/sanic/server.py:721> took 0.001 seconds
+Encountered an exception while running action 'validate_inputs'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Failed to execute custom action.
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 335, in run
+    json=json_body, method="post", timeout=DEFAULT_REQUEST_TIMEOUT)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/utils.py", line 689, in request
+    await resp.content.read())
+rasa_core.utils.ClientResponseError: 404, NOT FOUND, body='b'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = await action.run(dispatcher, tracker, self.domain)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 355, in run
+    raise Exception("Failed to execute custom action.") from e
+Exception: Failed to execute custom action.
+Action 'validate_inputs' ended with events '[]'
+Current tracker state [{}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_action_listen': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_validate_inputs': 1.0}]
+There is a memorised next action '20'
+There is no active form
+Predicted next action using policy_1_MemoizationPolicy
+Predicted next action 'appointment_form' with prob 1.00.
+Calling action endpoint to run action 'appointment_form'.
+Executing <Handle <TaskWakeupMethWrapper object at 0x7fd020242e88> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/aiohttp/helpers.py:656> took 0.005 seconds
+Encountered an exception while running action 'appointment_form'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Failed to execute custom action.
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 335, in run
+    json=json_body, method="post", timeout=DEFAULT_REQUEST_TIMEOUT)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/utils.py", line 689, in request
+    await resp.content.read())
+rasa_core.utils.ClientResponseError: 404, NOT FOUND, body='b'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = await action.run(dispatcher, tracker, self.domain)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 355, in run
+    raise Exception("Failed to execute custom action.") from e
+Exception: Failed to execute custom action.
+Action 'appointment_form' ended with events '[]'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_action_listen': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_validate_inputs': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_appointment_form': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'validate_inputs' with prob 0.57.
+Calling action endpoint to run action 'validate_inputs'.
+Executing <Handle <TaskWakeupMethWrapper object at 0x7fd020242f18> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/aiohttp/helpers.py:656> took 0.005 seconds
+Encountered an exception while running action 'validate_inputs'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Failed to execute custom action.
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 335, in run
+    json=json_body, method="post", timeout=DEFAULT_REQUEST_TIMEOUT)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/utils.py", line 689, in request
+    await resp.content.read())
+rasa_core.utils.ClientResponseError: 404, NOT FOUND, body='b'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = await action.run(dispatcher, tracker, self.domain)
+  File "/usr/lib/python3.6/asyncio/coroutines.py", line 110, in __next__
+    return self.gen.send(None)
+  File "/home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/rasa_core/actions/action.py", line 355, in run
+    raise Exception("Failed to execute custom action.") from e
+Exception: Failed to execute custom action.
+Action 'validate_inputs' ended with events '[]'
+Current tracker state [{'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_action_listen': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_validate_inputs': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_appointment_form': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_validate_inputs': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'utter_schedule_appointment' with prob 0.50.
+Action 'utter_schedule_appointment' ended with events '[]'
+Bot utterance 'BotUttered(text: Shall I confirm your appointment with None in the None department on None in the None?, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'intent_schedule_appointment': 1.0, 'prev_action_listen': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_validate_inputs': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_appointment_form': 1.0}, {'intent_schedule_appointment': 1.0, 'prev_validate_inputs': 1.0}, {'prev_utter_schedule_appointment': 1.0, 'intent_schedule_appointment': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 0.45.
+Action 'action_listen' ended with events '[]'
+deleted lock for conversation 'df8cd21f-4c92-4285-930f-39214eae6973' (unused)
+
+Executing <Handle <TaskWakeupMethWrapper object at 0x7fd020242b28> created at /home/sfrplindia1/Work/SantaFe/Raghuram/chatbots/venv_bm/lib/python3.6/site-packages/aiohttp/helpers.py:656> took 0.006 seconds
+Stopping worker [22838]
+Server Stopped
