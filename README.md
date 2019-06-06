@@ -1,5 +1,6 @@
-#This repo contains code  as well as the data used for training a rasa chat bot. The front end used is https://github.com/scalableminds/chatroom frontend. The bot also has functionality of picking data nd time using duckling.
-``
+# Rasa Chat bot
+This repo contains code  as well as the data used for training a rasa chat bot. The front end used is https://github.com/scalableminds/chatroom frontend. The bot also has functionality of picking data nd time using duckling.
+```
 Requirements : ubuntu system with python 3.6.7 installed
 Works with rasa 1.0.1 with https://github.com/scalableminds/chatroom v0.10.x as front end
 ```
