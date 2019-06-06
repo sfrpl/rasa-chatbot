@@ -37,4 +37,4 @@ train-interactive:
 	rasa interactive --verbose --endpoints endpoints.yml
 
 visualize:
-	rasa show stories
+	rasa visualize
