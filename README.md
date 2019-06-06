@@ -15,6 +15,7 @@ This repo contains code  as well as the data used for training a rasa chat bot. 
 * This mimics the presence of a database where information is present and the input of the user can be cross checked with the data present
 * Once the user enters the data, if no doctor is available the chatbot will reply back and ask the user to enter the details again
 * If the doctor is available , appointment is scheduled
+
 ```
 
 
