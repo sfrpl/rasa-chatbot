@@ -54,7 +54,7 @@ mixpanel==4.3.2
 mock==3.0.5
 multidict==4.5.2
 networkx==2.3
-numpy==1.16.3
+numpy==1.22.0
 packaging==19.0
 pandas==0.24.2
 pika==1.0.1
