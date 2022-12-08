@@ -9,7 +9,7 @@ async-timeout==3.0.1
 attrs==19.1.0
 boto3==1.9.156
 botocore==1.12.156
-certifi==2019.3.9
+certifi==2022.12.7
 cffi==1.12.3
 chardet==3.0.4
 Click==7.0
